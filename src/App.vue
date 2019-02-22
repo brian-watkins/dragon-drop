@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <h1>Here is my app.</h1>
+    <SuperList />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import SuperList from './components/SuperList.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    SuperList,
   },
 })
 export default class App extends Vue {}
