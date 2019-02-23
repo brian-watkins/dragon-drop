@@ -1,6 +1,6 @@
 <template>
   <div id="fun-stuff">
-    <h1>Here is your app!</h1>
+    <h1>Fruits</h1>
     <SuperList />
   </div>
 </template>

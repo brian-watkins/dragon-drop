@@ -46,6 +46,52 @@ export const fill = (selector: string, content: string) => {
   element.dispatchEvent(new Event('input', {bubbles: true, cancelable: true}))
 }
 
+export const dragOver = async (dragElement: HTMLElement, dragTarget: HTMLElement) => {
+  const downEvent = new MouseEvent('pointerdown', {
+    bubbles: true,
+    cancelable: true,
+    // clientX: 10,
+    // clientY: 10
+  })
+  
+  dragElement.dispatchEvent(downEvent)
+
+  await wait()
+
+  const dragStartEvent = new MouseEvent('dragstart', {
+    bubbles: true,
+    cancelable: true,
+    // clientX: 10,
+    // clientY: 10
+  })
+
+  dragElement.dispatchEvent(dragStartEvent)
+
+  await wait()
+
+  const dragOverEvent = new MouseEvent('dragover', {
+    bubbles: true,
+    cancelable: true,
+    // clientX: 10,
+    // clientY: 10
+  })
+
+  dragTarget.dispatchEvent(dragOverEvent)
+
+  await wait()
+
+  const mouseUpEvent = new MouseEvent('pointerup', {
+    bubbles: true,
+    cancelable: true,
+    // clientX: 10,
+    // clientY: 10
+  })
+
+  dragElement.dispatchEvent(mouseUpEvent)
+
+  await wait()
+}
+
 export const wait = (timeout: number = 0) => {
   return new Promise((resolve) => {
     setTimeout(() => {
