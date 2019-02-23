@@ -47,7 +47,7 @@ export const fill = (selector: string, content: string) => {
 }
 
 export const dragOver = async (dragElement: HTMLElement, dragTarget: HTMLElement) => {
-  const downEvent = new MouseEvent('pointerdown', {
+  const downEvent = new PointerEvent('pointerdown', {
     bubbles: true,
     cancelable: true,
     // clientX: 10,
@@ -58,7 +58,7 @@ export const dragOver = async (dragElement: HTMLElement, dragTarget: HTMLElement
 
   await wait()
 
-  const dragStartEvent = new MouseEvent('dragstart', {
+  const dragStartEvent = new DragEvent('dragstart', {
     bubbles: true,
     cancelable: true,
     // clientX: 10,
@@ -69,7 +69,7 @@ export const dragOver = async (dragElement: HTMLElement, dragTarget: HTMLElement
 
   await wait()
 
-  const dragOverEvent = new MouseEvent('dragover', {
+  const dragOverEvent = new DragEvent('dragover', {
     bubbles: true,
     cancelable: true,
     // clientX: 10,
@@ -80,7 +80,7 @@ export const dragOver = async (dragElement: HTMLElement, dragTarget: HTMLElement
 
   await wait()
 
-  const mouseUpEvent = new MouseEvent('pointerup', {
+  const mouseUpEvent = new PointerEvent('pointerup', {
     bubbles: true,
     cancelable: true,
     // clientX: 10,
